@@ -1,1 +1,13 @@
 // Specific CSS for your home-page
+.cocktail-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+.cocktail-card {
+  height: 200px;
+}
