@@ -1,15 +1,28 @@
-<h3> <%= @cocktail.name %> </h3>
-<br>
-<br>
-
-<% @cocktail.ingredients.each do |ingredient| %>
-  <li>
-    <%= ingredient.name %>:
-    <% ingredient.doses.each do |dose| %>
-    <%= dose.description %>
+<%= cl_image_tag @cocktail.photo.key, class: "cocktail-banner" %>
+<div class="container bg-white rounded pb-4">
+  <div class="d-flex align-bottom">
+    <h3 class="cocktail-name pt-3"> <%= @cocktail.name %></h3>
+    <%= link_to new_cocktail_dose_path(@cocktail) do %>
+      <i class="fas fa-plus"></i>
     <% end %>
-  </li>
-<% end %>
-
-<%= link_to "add a dose", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "back to cocktails", root_path %>
+    <%= link_to root_path do %>
+      <i class="fas fa-undo-alt"></i>
+    <% end %>
+  </div>
+  <% @cocktail.ingredients.each do |ingredient| %>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="border bg-light col-md-3 m-4 py-4">
+        <h6 class="text-center">  <%= ingredient.name.upcase %> </h6>
+        <br>
+        <ul>
+          <li>
+          <% ingredient.doses.each do |dose| %>
+            <%= dose.description %>
+          <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+</div>

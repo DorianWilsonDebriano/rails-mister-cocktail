@@ -6,8 +6,26 @@
   color: white;
   font-size: 32px;
   font-weight: bolder;
+  background-size: cover;
+  background-position: center;
 }
 
 .cocktail-card {
   height: 200px;
+  position: relative;
+  padding:0;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  background-size: cover;
+  background-position: center;
+}
+
+.cocktail-name {
+  font-weight: bolder;
+}
+
+.btn {
+  position: absolute;
+  bottom: 0px;
 }
