@@ -7,8 +7,7 @@
     <% @cocktails.each do |cocktail| %>
       <div class="bg-white border rounded cocktail-card col-md-3 m-4">
         <% if cocktail.photo.attached? %>
-          <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-          url('<%= cl_image_path cocktail.photo.key, height: 200, width: 200, crop: :fill %>')">
+          <div class="cocktail-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo.key, height: 200, width: 200, crop: :fill %>')">
             <h3 id="cocktail-name"> <%= cocktail.name %> </h3>
             <%= link_to "see details", cocktail_path(cocktail), class: "btn btn-primary btn-block " %>
           </div>
